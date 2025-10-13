@@ -55,8 +55,8 @@ export default function App() {
         setMovies(data.Search);
         setError("");
       } catch (err) {
-        console.error(err.message);
         if (err.name !== "AbortError") {
+          console.log(err.message);
           setError(err.message);
         }
       } finally {
@@ -70,6 +70,7 @@ export default function App() {
       return;
     }
 
+    handleCloseMovie();
     fetchMovies();
 
     return () => controller.abort();
@@ -243,6 +244,20 @@ function MovieDetails({ selectedId, watched, onCloseMovie, onAddWatched }) {
   }
 
   useEffect(() => {
+    function callback(e) {
+      if (e.code === "Escape") {
+        onCloseMovie();
+      }
+    }
+
+    document.addEventListener("keydown", callback);
+
+    return () => {
+      document.removeEventListener("keydown", callback);
+    };
+  }, [onCloseMovie]);
+
+  useEffect(() => {
     async function fetchMovieDetails() {
       setIsLoading(true);
 
@@ -263,7 +278,7 @@ function MovieDetails({ selectedId, watched, onCloseMovie, onAddWatched }) {
 
     return () => {
       document.title = "usePopcorn";
-      console.log(`Clean up effect for movie ${title}`);
+      // console.log(`Clean up effect for movie ${title}`);
     };
   }, [title]);
 
