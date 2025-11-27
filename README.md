@@ -5,38 +5,47 @@ This repository contains a collection of React projects created during the learn
 ## Projects
 
 ### 1. Pizza Menu (03-pizza-menu)
+
 A React application showcasing a pizza menu with dynamic data rendering.
 
 **Features:**
+
 - Component-based architecture
 - Dynamic data rendering
 - Image assets for pizza items
 
 **Technologies:**
+
 - React 19.1.1
 - React Scripts 5.0.1
 
 ### 2. Steps Counter (04-steps)
+
 A step counter application demonstrating React state management.
 
 **Features:**
+
 - State management with useState
 - Event handling
 - Component lifecycle
 
 **Technologies:**
+
 - React 19.1.1
 - React Scripts 5.0.1
 
 ### 3. Travel List (05-travel-list)
+
 A travel packing list application with item management functionality.
 
 **Features:**
+
 - List management
 - Item addition/removal
 - State persistence concepts
 
 **Technologies:**
+
 - React 19.1.1
 - React Scripts 5.0.1
 
@@ -45,16 +54,19 @@ A travel packing list application with item management functionality.
 Each project is a standalone React application. To run any project:
 
 1. Navigate to the project directory:
+
    ```bash
    cd [project-name]
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start the development server:
+
    ```bash
    npm start
    ```
@@ -88,3 +100,19 @@ my-react/
 ## License
 
 This project is for educational purposes as part of React learning journey.
+
+## VSCode development environment setup
+
+### Install Extentions:
+
+- ESLint
+- Prettier
+- One Monokai (optional - editor theme)
+- Material Icon Theme
+
+### Setup menu:
+
+- on save - onFocusChange
+- default formatter - Prettier - Code Formatter
+- format on save - checked
+- eslint run - onSave
