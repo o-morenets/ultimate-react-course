@@ -112,7 +112,7 @@ This project is for educational purposes as part of React learning journey.
 
 ### Setup menu:
 
-- on save - onFocusChange
+- auto save - onFocusChange
 - default formatter - Prettier - Code Formatter
 - format on save - checked
 - eslint run - onSave
