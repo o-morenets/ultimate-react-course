@@ -66,7 +66,6 @@ export default function App() {
 
     if (query.length < 3) {
       setMovies([]);
-      setSelectedId(null);
       setError("");
       return;
     }
@@ -229,22 +228,6 @@ function MovieDetails({ selectedId, watched, onCloseMovie, onAddWatched }) {
     Genre: genre,
   } = movie;
 
-  /* eslint-disable */
-  // if (imdbRating > 8) [isTop, setIsTop] = useState(true);
-  // if (imdbRating > 8) return <p>Greatest ever!</p>;
-  /* eslint-enable */
-
-  // const [isTop, setIsTop] = useState(imdbRating > 8);
-  // console.log(isTop);
-  // useEffect(() => {
-  //   setIsTop(imdbRating > 8);
-  // }, [imdbRating]);
-
-  // const isTop = imdbRating > 8;
-  // console.log(isTop);
-
-  // const [avgRating, setAvgRating] = useState(0);
-
   function handleAdd() {
     const newWatchedMovie = {
       imdbID: selectedId,
@@ -258,9 +241,6 @@ function MovieDetails({ selectedId, watched, onCloseMovie, onAddWatched }) {
 
     onAddWatched(newWatchedMovie);
     onCloseMovie();
-
-    // setAvgRating(Number(imdbRating));
-    // setAvgRating((prev) => (prev + userRating) / 2);
   }
 
   useEffect(() => {
@@ -325,9 +305,6 @@ function MovieDetails({ selectedId, watched, onCloseMovie, onAddWatched }) {
               </p>
             </div>
           </header>
-
-          {/* <p>{avgRating}</p> */}
-
           <section>
             <div className="rating">
               {isWatched ? (
